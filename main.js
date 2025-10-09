@@ -1,3 +1,5 @@
+console.warn("started");
+
 import {world} from "@minecraft/server";
 
 world.afterEvents.chatSend.subscribe((event)=> {
@@ -9,3 +11,4 @@ world.afterEvents.chatSend.subscribe((event)=> {
     }
     
 })
+
