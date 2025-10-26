@@ -8,6 +8,7 @@ world.afterEvents.chatSend.subscribe((event)=>{
 
     if(message == "uhc start"){
         player.sendMessage("UHC started!");
-        player.runCommand("give @s diamond_sword[{Unbreakable:1b}] 1");
+        player.runCommand("give @a stone_sword 1");
+        player.runCommand("enchant @a sharpness 2");
     }
 })
