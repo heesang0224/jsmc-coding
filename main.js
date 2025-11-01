@@ -1,4 +1,4 @@
-import {world} from "@minecraft/server";
+import {PlayerInputModeChangeAfterEventSignal, world} from "@minecraft/server";
 
 world.afterEvents.playerBreakBlock.subscribe((event)=>{
     const block = event.brokenBlockPermutation;
@@ -18,4 +18,10 @@ world.afterEvents.playerPlaceBlock.subscribe((event)=>{
     const block = event.block;
     const player= event.player;
     player.onScreenDisplay.setActionBar(`You placed a ${block.typeId}`);
+
+})
+
+world.afterEvents.playerSpawn.subscribe((event)=>{
+    const player = event.player;
+    player.addEffect("resistance", 150, 5, true);
 })
